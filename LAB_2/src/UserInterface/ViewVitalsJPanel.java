@@ -219,21 +219,6 @@ public class ViewVitalsJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-         int index=tblVitals.getSelectedRow();
-        if(index<0){
-               JOptionPane.showMessageDialog(this, "No row selected.");
-               return;
-        }
-        DefaultTableModel model = (DefaultTableModel)tblVitals.getModel();
-       VitalSigns  vh= (VitalSigns)model.getValueAt(index, 0);
-       vitalSignHistory.delete(vh);
-       
-          JOptionPane.showMessageDialog(this, "Vital Sign deleted.");
-          displayTable();
-    }//GEN-LAST:event_btnViewActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
         int index=tblVitals.getSelectedRow();
         if(index<0){
                JOptionPane.showMessageDialog(this, "No row selected.");
@@ -245,6 +230,26 @@ public class ViewVitalsJPanel extends javax.swing.JPanel {
         txtPulse.setText(String.valueOf(vh.getPulse()));
         txtTemperature.setText(String.valueOf(vh.getTemperature()));
         txtDate.setText(vh.getDate());
+    }//GEN-LAST:event_btnViewActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+               
+        int index=tblVitals.getSelectedRow();
+        if(index<0){
+               JOptionPane.showMessageDialog(this, "No row selected.");
+               return;
+        }
+       DefaultTableModel model = (DefaultTableModel)tblVitals.getModel();
+       VitalSigns  vh= (VitalSigns)model.getValueAt(index, 0);
+       vitalSignHistory.delete(vh);
+       JOptionPane.showMessageDialog(this, "Vital Sign deleted.");
+       displayTable();
+        txtBP.setText("");
+        txtPulse.setText("");
+        txtTemperature.setText("");
+        txtDate.setText("");
+        
     }//GEN-LAST:event_btnDeleteActionPerformed
 
 
