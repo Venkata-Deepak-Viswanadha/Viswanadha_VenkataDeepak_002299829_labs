@@ -6,6 +6,7 @@ package UserInterface;
 
 import Business.Account;
 import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -215,6 +216,10 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         UserProcessContainer.remove(this);
         CardLayout layout = (CardLayout)UserProcessContainer.getLayout();
         layout.previous(UserProcessContainer);
+        Component component = UserProcessContainer.getComponent(UserProcessContainer.getComponentCount() - 1);
+        if(component instanceof ManageAccountJPanel manageAccountPanel) {
+            manageAccountPanel.updateTable();
+        }
     }//GEN-LAST:event_btnBackActionPerformed
 
         public boolean validateNumber(String input){
