@@ -122,7 +122,6 @@
             <Component class="javax.swing.JButton" name="btnSupplierProfile">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update Profile"/>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSupplierProfileActionPerformed"/>
@@ -133,6 +132,9 @@
                 <Property name="text" type="java.lang.String" value="Manage Staff"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageStaffActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Performance">
               <Properties>

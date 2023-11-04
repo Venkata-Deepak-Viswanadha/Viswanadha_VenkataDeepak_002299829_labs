@@ -75,7 +75,6 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         btnSupplierProfile.setText("Update Profile");
-        btnSupplierProfile.setEnabled(false);
         btnSupplierProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSupplierProfileActionPerformed(evt);
@@ -84,6 +83,11 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
 
         btnManageStaff.setText("Manage Staff");
         btnManageStaff.setEnabled(false);
+        btnManageStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageStaffActionPerformed(evt);
+            }
+        });
 
         Performance.setText("Performance");
         Performance.setEnabled(false);
@@ -171,6 +175,11 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnSupplierProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierProfileActionPerformed
         // TODO add your handling code here:
+        UpdateProfileJPanel updateProfileJPanel = new UpdateProfileJPanel(supplier);
+        workArea.add("updateProfileJPanel", updateProfileJPanel);
+        CardLayout layout = (CardLayout)workArea.getLayout();
+        layout.next(workArea);   
+        
     }//GEN-LAST:event_btnSupplierProfileActionPerformed
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
@@ -187,6 +196,10 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         layout.previous(mainWorkArea);
 
     }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStaffActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageStaffActionPerformed
 
     @Override
     public String toString() {
