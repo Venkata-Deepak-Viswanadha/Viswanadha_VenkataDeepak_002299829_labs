@@ -16,6 +16,10 @@ public class Product {
     private String name;
     private int price;
     private int id;
+
+    public void setId(int id) {
+        this.id = id;
+    }
     private List<Feature> features= new ArrayList<>();
 
     private static int count = 0;

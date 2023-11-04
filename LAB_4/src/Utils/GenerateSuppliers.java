@@ -21,6 +21,7 @@ public class GenerateSuppliers {
 
         // Add electronic products to Walmart's catalog
         Product laptop = walmartCatalog.addProduct();
+        laptop.setId(1);
         laptop.setName("Laptop");
         laptop.setPrice(800);
         Feature feature1 = laptop.addNewFeature();
@@ -31,6 +32,7 @@ public class GenerateSuppliers {
         feature2.setValue("16GB");
         
         Product smartphone = walmartCatalog.addProduct();
+        smartphone.setId(2);
         smartphone.setName("Smartphone");
         smartphone.setPrice(400);
         Feature feature3 = smartphone.addNewFeature();
@@ -47,6 +49,7 @@ public class GenerateSuppliers {
 
         // Add electronic products to Best Buy's catalog
         Product TV = bestBuyCatalog.addProduct();
+        TV.setId(3);
         TV.setName("Television");
         TV.setPrice(1000);
         Feature feature5 = TV.addNewFeature();
@@ -63,6 +66,7 @@ public class GenerateSuppliers {
 
         // Add electronic products to Newegg's catalog
         Product gamingLaptop = newEggCatalog.addProduct();
+        gamingLaptop.setId(4);
         gamingLaptop.setName("Gaming Laptop");
         gamingLaptop.setPrice(1500);
         Feature feature7 = gamingLaptop.addNewFeature();

@@ -246,6 +246,7 @@ for (int i = 0; i < model.getRowCount(); i++) {
 Feature currentFeature = product.getFeatures().get(i);
 currentFeature.setName (tblFeatures.getValueAt(i, 0).toString());
 currentFeature.setValue((String) tblFeatures.getValueAt(i,1));
+System.out.println("I am here "+tblFeatures.getValueAt(i, 0).toString()+ (String) tblFeatures.getValueAt(i,1));
 }
 }
 
@@ -267,7 +268,14 @@ refreshTable();
     }//GEN-LAST:event_btnRemoveFeatureActionPerformed
 
     public void refreshTable() {
-
+DefaultTableModel model = (DefaultTableModel) tblFeatures.getModel();
+model.setRowCount(0);
+for(Feature each:product.getFeatures()){
+    Object[] data = new Object[2];
+    data[0]= each.getName();
+    data[1]= each.getValue();
+    model.addRow(data);
+}
         
     }
 
