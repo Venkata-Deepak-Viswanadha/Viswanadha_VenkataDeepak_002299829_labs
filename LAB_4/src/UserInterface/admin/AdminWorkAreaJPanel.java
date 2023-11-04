@@ -68,26 +68,18 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         lblWelcome.setText("<WelcomeMsg>");
 
-        workArea.setBackground(new java.awt.Color(255, 255, 255));
-        workArea.setLayout(new java.awt.CardLayout());
-
         javax.swing.GroupLayout menuBarLayout = new javax.swing.GroupLayout(menuBar);
         menuBar.setLayout(menuBarLayout);
         menuBarLayout.setHorizontalGroup(
             menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuBarLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menuBarLayout.createSequentialGroup()
-                        .addComponent(workArea, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(menuBarLayout.createSequentialGroup()
-                        .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnManageSuppliers)
-                        .addGap(19, 19, 19)
-                        .addComponent(btnLogOut)
-                        .addGap(46, 46, 46))))
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnManageSuppliers)
+                .addGap(19, 19, 19)
+                .addComponent(btnLogOut)
+                .addGap(46, 46, 46))
         );
         menuBarLayout.setVerticalGroup(
             menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,12 +89,14 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnManageSuppliers)
                     .addComponent(btnLogOut)
                     .addComponent(lblWelcome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(workArea, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
 
         splitPane.setTopComponent(menuBar);
+
+        workArea.setBackground(new java.awt.Color(255, 255, 255));
+        workArea.setLayout(new java.awt.CardLayout());
+        splitPane.setRightComponent(workArea);
 
         add(splitPane, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents

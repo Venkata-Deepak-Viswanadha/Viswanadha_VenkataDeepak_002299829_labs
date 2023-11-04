@@ -31,6 +31,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
     
     /** Creates new form ManageSuppliers */
     public ManageSuppliers(JPanel upc, SupplierDirectory sd) {
+        System.out.println("called me");
         initComponents();
         userProcessContainer = upc;
         supplierDirectory = sd;
