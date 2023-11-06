@@ -6,6 +6,7 @@
 package Business;
 
 import java.util.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -16,6 +17,16 @@ public class Product {
     private String name;
     private int price;
     private int id;
+    private ImageIcon logoImage=null;
+
+    public ImageIcon getLogoImage() {
+        return logoImage;
+    }
+
+    public void setLogoImage(ImageIcon logoImage) {
+        this.logoImage = logoImage;
+    }
+    
 
     public void setId(int id) {
         this.id = id;
